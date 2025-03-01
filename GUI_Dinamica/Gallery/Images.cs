@@ -42,7 +42,6 @@ namespace GUI_Dinamica
             this.Name = "Images";
             this.Text = "Images";
             this.ResumeLayout(false);
-
         }
         // Metodo de carga de imagenes sincrono (no recomendado, uso excesivo de memoria)
         //private void LoadImages()
@@ -121,7 +120,7 @@ namespace GUI_Dinamica
 
                                 flowLayoutPanel.Controls.Add(pic);
                             });
-                        } // originalImage se dispone aquí
+                        }
                     });
                 }
             }

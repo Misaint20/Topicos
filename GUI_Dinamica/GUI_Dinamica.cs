@@ -19,7 +19,7 @@ namespace GUI_Dinamica
 
         private void creacionDeBotonesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 buttons = new();
+            GUI_Dinamica buttons = new();
             buttons.Show();
         }
 
