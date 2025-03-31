@@ -32,7 +32,7 @@ namespace AccesoBaseDatos1
             }
 
             // Llenar el ComboBox con las tablas de la base de datos
-            CargarComboTablas();
+            CargarTablas();
         }
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace AccesoBaseDatos1
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            CargarComboTablas();
+            CargarTablas();
 
             if (dgvAlumnos.Columns.Count > 0)
             {
@@ -63,7 +63,7 @@ namespace AccesoBaseDatos1
                 if (dgvAlumnos.Columns[0].Name == "TableName" ||
                     dgvAlumnos.Columns[0].HeaderText.StartsWith("Tables"))
                 {
-                    CargarComboTablas();
+                    CargarTablas();
                 }
                 else
                 {
@@ -95,7 +95,7 @@ namespace AccesoBaseDatos1
                 }
 
                 // Recargar las tablas
-                CargarComboTablas();
+                CargarTablas();
             }
         }
 
@@ -163,7 +163,7 @@ namespace AccesoBaseDatos1
             crearTablaForm.ShowDialog();
         }
 
-        private void CargarComboTablas()
+        private void CargarTablas()
         {
             try
             {
@@ -421,7 +421,7 @@ namespace AccesoBaseDatos1
                     radSQLServer.Checked = ConexionManager.Conexion.EsSQLServer;
                     radMySQL.Checked = !ConexionManager.Conexion.EsSQLServer;
                     // Recargar las tablas
-                    CargarComboTablas();
+                    CargarTablas();
                 }
                 else
                 {

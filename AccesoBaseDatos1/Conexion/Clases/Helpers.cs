@@ -23,7 +23,7 @@ namespace AccesoBaseDatos1
             {
                 if (control is TextBox txt)
                 {
-                    yield return "@" + txt.Name.Substring(3); // Eliminar el prefijo "txt"
+                    yield return "@" + txt.Name.Substring(3);
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace AccesoBaseDatos1
                 if (control is TextBox txt)
                 {
                     var param = dbConnection.CreateParameter();
-                    param.ParameterName = "@" + txt.Name.Substring(3); // Eliminar el prefijo "txt"
+                    param.ParameterName = "@" + txt.Name.Substring(3); 
                     param.Value = txt.Text;
                     yield return param;
                 }
@@ -55,14 +55,12 @@ namespace AccesoBaseDatos1
 
         public static string GetPrimaryKeyClause(DataGridView dgvAlumnos)
         {
-            // Suponiendo que la clave primaria es la primera columna
             var primaryKeyColumn = dgvAlumnos.Columns[0].Name;
             return $"{primaryKeyColumn} = @{primaryKeyColumn}";
         }
 
         public static string GetSearchClause(DataGridView dgvAlumnos)
         {
-            // Suponiendo que la búsqueda se realiza por la primera columna
             var searchColumn = dgvAlumnos.Columns[0].Name;
             return $"{searchColumn} = @{searchColumn}";
         }
