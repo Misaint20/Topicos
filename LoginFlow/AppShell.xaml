@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:LoginFlow"
     xmlns:views="clr-namespace:LoginFlow.Views"
+    xmlns:view="clr-namespace:Practica5"
     Shell.FlyoutBehavior="Disabled">
 
     <!--Loading Page-->
@@ -28,6 +29,14 @@
         Route="home" />
 
         </Tab>
+        <Tab Title="Contacts" Icon="journal_check.svg">
+            <ShellContent
+                Icon="journal_check.svg"
+        Title="Contacts"
+        ContentTemplate="{DataTemplate view:MainPage}"
+        Route="MainPage" />
+        </Tab>
+        
         <Tab Title="Settings" Icon="gear_fill.svg">
             <ShellContent
                 Icon="house_door_fill.svg"

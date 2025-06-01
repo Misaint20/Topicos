@@ -10,7 +10,8 @@
                HasShadow="True"
                Margin="0,-20,0,0"
                ZIndex="0"
-               Padding="8">
+               Padding="8"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
                 <Frame.Shadow>
                     <Shadow Brush="Black"
                 Offset="20,20"
@@ -18,9 +19,7 @@
                 Opacity="0.9" />
                 </Frame.Shadow>
                 <StackLayout Padding="10">
-
                     <VerticalStackLayout Padding="10">
-
                         <VerticalStackLayout Padding="0" Margin="0,5,0,0">
                             <HorizontalStackLayout>
                                 <Label FontSize="34" TextColor="Green" FontAttributes="Bold" Text="W"/>
@@ -41,9 +40,25 @@
                                 FontSize="16"
                                 />
                             <BoxView Color="Black"
-                                 Margin="0,20,0,0"
-                                 HeightRequest="2"
-                                 HorizontalOptions="Fill" />
+                                Margin="0,20,0,0"
+                                HeightRequest="2"
+                                HorizontalOptions="Fill" 
+                                />
+                            <HorizontalStackLayout Margin="0,20,0,0" HorizontalOptions="Center">
+                                <Label Text="Activar Notificaciones"
+                                   VerticalOptions="Center"
+                                   FontSize="16"
+                                   Margin="0,0,10,0" />
+                                <Switch IsToggled="{Binding NotificacionesActivadas}"
+                                    AbsoluteLayout.LayoutBounds="-0.1,0.3,100,30"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            </HorizontalStackLayout>
+                            
+                            <Button Text="Cambiar Tema"
+                                Command="{Binding CambiarTemaCommand}"
+                                Margin="0,10,0,0"
+                                HorizontalOptions="Center"
+                                />
                             <Button
                                 Margin="0,20,0,0"
                                 Text="Logout"
@@ -51,11 +66,6 @@
                                 Clicked="LogoutButton_Clicked"
                                 />
                         </VerticalStackLayout>
-
-
-                       
-                        
-
                     </VerticalStackLayout>
                 </StackLayout>
             </Frame>

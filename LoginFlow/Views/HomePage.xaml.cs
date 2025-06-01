@@ -5,8 +5,13 @@ public partial class HomePage : ContentPage
 	public HomePage()
 	{
 		InitializeComponent();
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
-        lblNombre.Text = Preferences.Get("UsuarioActual", "??");
+        string nombreUsuario = Preferences.Get("UsuarioActualNombre", "??");
 
+        lblNombre.Text = $"Bienvenido, {nombreUsuario}!";
     }
 }
